@@ -14,6 +14,7 @@ pipeline {
     stage('testing') {
       steps {
         sh 'npm run test'
+        input(message: 'Authoriza', submitter: 'developer')
       }
     }
   }
