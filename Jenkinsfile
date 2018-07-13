@@ -14,8 +14,8 @@ pipeline {
     stage('testing') {
       steps {
         sh 'npm run test'
-        input(message: 'Authoriza', submitter: 'developer')
         emailext(subject: 'Aprueba McAnnas', body: 'Aprueba', attachLog: true, replyTo: 'mauro.lozano@beone.mx', to: 'mauro.lozano@beone.mx')
+        input(message: 'Authoriza', submitter: 'developer')
       }
     }
   }
